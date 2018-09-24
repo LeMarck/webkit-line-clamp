@@ -1,0 +1,39 @@
+{
+  "name": "webkit-line-clamp",
+  "description": "JS polyfill CSS property -webkit-line-clamp",
+  "version": "1.0.1",
+  "main": "index.js",
+  "browser": "dist/webkit-line-clamp.min.js",
+  "scripts": {
+    "lint": "eslint index.js",
+    "build": "npm run lint && rollup -c"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/LeMarck/webkit-line-clamp.git"
+  },
+  "author": "Evgeny Petrov",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/LeMarck/webkit-line-clamp/issues"
+  },
+  "homepage": "https://github.com/LeMarck/webkit-line-clamp#readme",
+  "files": [
+    "dist",
+    "LICENSE",
+    "README.md",
+    "index.js"
+  ],
+  "keywords": [
+    "webkit",
+    "line",
+    "clamp",
+    "polyfill"
+  ],
+  "devDependencies": {
+    "eslint": "^5.6.0",
+    "rollup": "^0.66.2",
+    "rollup-plugin-commonjs": "^9.1.8",
+    "rollup-plugin-uglify": "^6.0.0"
+  }
+}
