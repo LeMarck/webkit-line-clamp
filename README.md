@@ -22,19 +22,18 @@ $ npm install --save webkit-line-clamp
 
 ## Usage
 
-#### Node.js
+#### JavaScript
 ```js
 var webkitLineClamp = require('webkit-line-clamp');
 
 webkitLineClamp(document.getElementById('text'), 3);
 ```
 
-#### Browser
-```html
-<script src="https://cdn.jsdelivr.net/npm/webkit-line-clamp/dist/webkit-line-clamp.min.js"></script>
-<script>
-    webkitLineClamp(document.getElementById('text'), 3);
-</script>
+#### TypeScript
+```ts
+import webkitLineClamp from 'webkit-line-clamp';
+
+webkitLineClamp(document.getElementById('text'), 3);
 ```
 
 ## License
