@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>WebkitLineClamp | JS polyfill CSS property -webkit-line-clamp</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="index.js"></script>
+</head>
+<body>
+    <header class="header">
+        <h1 class="header__title">Webkit Line Clamp</h1>
+        <p class="header__description">
+            JS polyfill CSS property <strong>-webkit-line-clamp</strong>
+        </p>
+    </header>
+    <main class="main">
+        <section class="section">
+            <h2 class="section__title">Text element</h2>
+            <article class="section__container">
+                <p class="section__text" id="text-element">
+                    I put the shotgun in an Adidas bag and padded it out with four pairs of tennis socks,
+                    not my style at all, but that was what I was aiming for:
+                    If they think you're crude, go technical; if they think you're technical, go crude.
+                    I'm a very technical boy. So I decided to get as crude as possible.
+                    These days, thought, you have to be pretty technical before you can even aspire to crudeness.
+                    I'd had to turn both those twelve-gauge shells from brass stock, on the lathe, and then load then myself;
+                    I'd had to dig up an old microfiche with instructions for hand-loading cartridges;
+                    I'd had to build a lever-action press to seat the primers -all very tricky.
+                    But I knew they'd work.
+                </p>
+                <script>
+                    webkitLineClamp(document.getElementById('text-element'), 3)
+                </script>
+            </article>
+        </section>
+        <section class="section">
+            <h2 class="section__title">Text container</h2>
+            <article class="section__container">
+                <p class="section__text" id="text-container">
+                    I put the shotgun in an <strong>Adidas</strong> bag and padded it out with four pairs of tennis socks,
+                    not my style at all, but that was what I was aiming for:
+                    <i>If they think you're crude, go technical; <u>if they think you're technical, go crude</u></i>.
+                    I'm a very technical boy. So I decided to get as crude as possible.
+                    These days, thought, you have to be pretty technical before you can even aspire to crudeness.
+                    I'd had to turn both those twelve-gauge shells from brass stock, on the lathe, and then load then myself;
+                    I'd had to dig up an old microfiche with instructions for hand-loading cartridges;
+                    I'd had to build a lever-action press to seat the primers -all very tricky.
+                    But I knew they'd work.
+                </p>
+                <script>
+                    webkitLineClamp(document.getElementById('text-container'), 3)
+                </script>
+            </article>
+        </section>
+        <section class="section">
+            <h2 class="section__title">Inline styled text</h2>
+            <article class="section__container">
+                <p class="section__text" id="text-inline-style">
+                    I put the shotgun in an <span style="font-weight: bold">Adidas</span>
+                    bag and padded it out with four pairs of tennis socks,
+                    not my style at all, but that was what I was aiming for:
+                    <span style="color: #5af">
+                        If they think you're crude, go technical;
+                        <u>if they think you're technical, go crude</u>
+                    </span>.
+                    I'm a very technical boy. So I decided to get as crude as possible.
+                    These days, thought, you have to be pretty technical before you can even aspire to crudeness.
+                    I'd had to turn both those twelve-gauge shells from brass stock, on the lathe, and then load then myself;
+                    I'd had to dig up an old microfiche with instructions for hand-loading cartridges;
+                    I'd had to build a lever-action press to seat the primers -all very tricky.
+                    But I knew they'd work.
+                </p>
+                <script>
+                    webkitLineClamp(document.getElementById('text-inline-style'), 3)
+                </script>
+            </article>
+        </section>
+        <section class="section">
+            <h2 class="section__title">Various text line-height</h2>
+            <article class="section__container">
+                <p class="section__text" id="text-line-height">
+                    I put the shotgun in an <span style="line-height: 36px">Adidas</span>
+                    <span>bag and padded it out with four pairs of tennis socks,</span>
+                    not my style at all, but that was what I was aiming for:
+                    <span style="line-height: 48px">
+                        If they think you're crude, go technical;
+                        if they think you're technical, go crude.
+                    </span>
+                    I'm a very technical boy. So I decided to get as crude as possible.
+                    <span>These days, thought, you have to be pretty technical before you can even aspire to crudeness.</span>
+                    I'd had to turn both those twelve-gauge shells from brass stock, on the lathe, and then load then myself;
+                    I'd had to dig up an old microfiche with instructions for hand-loading cartridges;
+                    I'd had to build a lever-action press to seat the primers -all very tricky.
+                    But I knew they'd work.
+                </p>
+                <script>
+                    webkitLineClamp(document.getElementById('text-line-height'), 3)
+                </script>
+            </article>
+        </section>
+    </main>
+</body>
+</html>

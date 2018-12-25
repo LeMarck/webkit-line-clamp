@@ -24,6 +24,35 @@ function getLineHeight(element) {
 }
 
 /**
+ * @param {HTMLElement} element
+ * @param {number} lineHeight
+ */
+function setupLineHeight(element, lineHeight) {
+    for (var index = 0; index < element.childNodes.length; index++) {
+        var childNode = element.childNodes[index];
+
+        if (childNode.nodeType === 1) {
+            childNode.inlineCssText = childNode.style.cssText;
+            childNode.style.lineHeight = lineHeight + 'px';
+        }
+    }
+}
+
+/**
+ * @param {HTMLElement} element
+ */
+function removeLineHeight(element) {
+    for (var index = 0; index < element.childNodes.length; index++) {
+        var childNode = element.childNodes[index];
+
+        if (childNode.nodeType === 1) {
+            childNode.removeAttributeNode(childNode.attributes.getNamedItem('style'));
+            childNode.style.cssText = childNode.inlineCssText;
+        }
+    }
+}
+
+/**
  * @param {HTMLElement} textNode
  * @param {HTMLElement} rootElement
  * @param {number} maxHeight
@@ -31,7 +60,12 @@ function getLineHeight(element) {
  */
 function truncateTextNode(textNode, rootElement, maxHeight) {
     var textContent = textNode.textContent;
-    var chunks = textNode.textContent.split(' ');
+
+    textNode.textContent = '';
+
+    if (rootElement.clientHeight > maxHeight) return false;
+
+    var chunks = textContent.split(' ');
 
     while (chunks.pop()) {
         textNode.textContent = chunks.join(' ');
@@ -47,9 +81,7 @@ function truncateTextNode(textNode, rootElement, maxHeight) {
     var length = textContent.length;
 
     while (length > 1) {
-        textContent = textContent.substring(0, length - 1);
-
-        length = textContent.length;
+        textContent = textContent.substring(0, --length);
 
         textNode.textContent = textContent + '…';
 
@@ -63,27 +95,18 @@ function truncateTextNode(textNode, rootElement, maxHeight) {
  * @param {HTMLElement} element
  * @param {HTMLElement} rootElement
  * @param {number} maxHeight
+ * @param {number} lineHeight
  * @return {boolean}
  */
-function truncateElementNode(element, rootElement, maxHeight) {
-    var cssText = element.style.cssText;
+function truncateElementNode(element, rootElement, maxHeight, lineHeight) {
     var childNodes = element.childNodes;
     var length = childNodes.length - 1;
 
-    element.style.lineHeight = getLineHeight(rootElement) + 'px';
-
     while (length > -1) {
         var childNode = childNodes[length--];
+        var func = childNode.nodeType === 1 ? truncateElementNode : truncateTextNode;
 
-        if ((childNode.nodeType === 1 ? truncateElementNode : truncateTextNode)(childNode, rootElement, maxHeight)) {
-            if (cssText) {
-                element.style.cssText = cssText;
-            } else {
-                element.removeAttributeNode(element.attributes.getNamedItem('style'));
-            }
-
-            return true;
-        }
+        if (func(childNode, rootElement, maxHeight, lineHeight)) return true;
 
         element.removeChild(childNode);
     }
@@ -96,11 +119,14 @@ function truncateElementNode(element, rootElement, maxHeight) {
  * @param {number} lineCount
  */
 function truncate(rootElement, lineCount) {
-    var maxHeight = Math.round(getLineHeight(rootElement) * lineCount);
+    var lineHeight = getLineHeight(rootElement);
+    var maxHeight = Math.round(lineHeight * lineCount);
 
     if (rootElement.clientHeight <= maxHeight) return;
 
-    truncateElementNode(rootElement, rootElement, maxHeight);
+    setupLineHeight(rootElement, lineHeight);
+    truncateElementNode(rootElement, rootElement, maxHeight, lineHeight);
+    removeLineHeight(rootElement);
 }
 
 /**
@@ -119,8 +145,16 @@ function native(rootElement, lineCount) {
  * @param {HTMLElement} element
  * @param {number} lineCount
  */
-module.exports = function webkitLineClamp(element, lineCount) {
+function webkitLineClamp(element, lineCount) {
     if (!lineCount) return;
 
     (typeof element.style.webkitLineClamp === 'undefined' ? truncate : native)(element, lineCount);
-};
+}
+
+(function wrapper(root, factory) {
+    if (typeof exports === 'object') {
+        module.exports = factory;
+    } else {
+        root.webkitLineClamp = factory;
+    }
+}(this, webkitLineClamp));
