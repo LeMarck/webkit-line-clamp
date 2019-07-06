@@ -1,7 +1,7 @@
 {
   "name": "webkit-line-clamp",
   "description": "JS polyfill CSS property -webkit-line-clamp",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "main": "index.js",
   "scripts": {
     "lint": "eslint index.js"
@@ -29,6 +29,6 @@
     "polyfill"
   ],
   "devDependencies": {
-    "eslint": "^5.16.0"
+    "eslint": "^6.0.1"
   }
 }

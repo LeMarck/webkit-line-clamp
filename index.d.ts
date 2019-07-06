@@ -3,6 +3,6 @@
 // Definitions by: Evgeny Petrov
 
 declare module 'webkit-line-clamp' {
-    function webkitLineClamp(element: Element, lineCount: number): void;
+    export function webkitLineClamp(element: Element, lineCount: number): void;
     export default webkitLineClamp
 }
