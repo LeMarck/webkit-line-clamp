@@ -154,6 +154,7 @@ function webkitLineClamp(element, lineCount) {
 (function wrapper(root, factory) {
     if (typeof exports === 'object') {
         module.exports = factory;
+        module.exports.webkitLineClamp = factory;
     } else {
         root.webkitLineClamp = factory;
     }

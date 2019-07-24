@@ -18,13 +18,15 @@ body {
 }
 
 .main {
+    display: block;
     max-width: 600px;
     margin: 50px auto 0;
 }
 
 .section {
     background: #fff;
-    box-shadow: 0 3px 38px rgba(0,0,0,0.05), 0 0px 12px rgba(0,0,0,0.05);
+    -webkit-box-shadow: 0 3px 38px rgba(0,0,0,0.05), 0 0px 12px rgba(0,0,0,0.05);
+            box-shadow: 0 3px 38px rgba(0,0,0,0.05), 0 0px 12px rgba(0,0,0,0.05);
     padding: 24px 36px;
     margin-bottom: 24px;
 }

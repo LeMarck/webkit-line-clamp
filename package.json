@@ -23,12 +23,10 @@
     "index.d.ts"
   ],
   "keywords": [
-    "webkit",
-    "line",
-    "clamp",
+    "webkit-line-clamp",
     "polyfill"
   ],
   "devDependencies": {
-    "eslint": "^6.0.1"
+    "eslint": "^6.1.0"
   }
 }
