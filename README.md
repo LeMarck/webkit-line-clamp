@@ -23,8 +23,8 @@ $ npm install webkit-line-clamp
 
 ```js
 import webkitLineClamp from 'webkit-line-clamp';
-// or import { webkitLineClamp } from 'webkit-line-clamp';
-// *NOTE:* Since version 1.2.1
+// or 
+import { webkitLineClamp } from 'webkit-line-clamp';
 
 webkitLineClamp(document.getElementById('text'), 3);
 ```
