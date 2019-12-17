@@ -15,7 +15,7 @@
   "bugs": {
     "url": "https://github.com/LeMarck/webkit-line-clamp/issues"
   },
-  "homepage": "https://github.com/LeMarck/webkit-line-clamp#readme",
+  "homepage": "https://lemarck.github.io/webkit-line-clamp/",
   "files": [
     "LICENSE",
     "README.md",
@@ -27,6 +27,6 @@
     "polyfill"
   ],
   "devDependencies": {
-    "eslint": "^6.2.2"
+    "eslint": "^6.7.2"
   }
 }

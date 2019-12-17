@@ -13,7 +13,21 @@
     <header class="header">
         <h1 class="header__title">Webkit Line Clamp</h1>
         <p class="header__description">
-            JS polyfill CSS property <strong>-webkit-line-clamp</strong>
+            <a href="https://travis-ci.org/LeMarck/webkit-line-clamp" class="header__link">
+                <img src="https://travis-ci.org/LeMarck/webkit-line-clamp.svg?branch=master" alt="Build Status">
+            </a>
+            <a href="https://github.com/LeMarck/webkit-line-clamp/blob/master/LICENSE" class="header__link">
+                <img src="https://img.shields.io/badge/license-MIT-blue.svg" alt="MIT License">
+            </a>
+            <a href="https://www.npmjs.com/package/webkit-line-clamp" class="header__link">
+                <img src="http://img.shields.io/npm/v/webkit-line-clamp.svg?style=flat" alt="NPM Version">
+            </a>
+            <a href="https://GitHub.com/LeMarck/webkit-line-clamp/stargazers/" class="header__link">
+                <img src="https://img.shields.io/github/stars/LeMarck/webkit-line-clamp.svg?style=social" alt="NPM Version">
+            </a>
+        </p>
+        <p class="header__description">
+            JS polyfill CSS property <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/-webkit-line-clamp" class="header__link">-webkit-line-clamp</a>
         </p>
     </header>
     <main class="main">
@@ -21,18 +35,13 @@
             <h2 class="section__title">Text element</h2>
             <article class="section__container">
                 <p class="section__text" id="text-element">
-                    I put the shotgun in an Adidas bag and padded it out with four pairs of tennis socks,
-                    not my style at all, but that was what I was aiming for:
-                    If they think you're crude, go technical; if they think you're technical, go crude.
-                    I'm a very technical boy. So I decided to get as crude as possible.
-                    These days, thought, you have to be pretty technical before you can even aspire to crudeness.
-                    I'd had to turn both those twelve-gauge shells from brass stock, on the lathe, and then load then myself;
-                    I'd had to dig up an old microfiche with instructions for hand-loading cartridges;
-                    I'd had to build a lever-action press to seat the primers -all very tricky.
-                    But I knew they'd work.
+                    The -webkit-line-clamp CSS property allows limiting of&nbsp;the contents of&nbsp;a&nbsp;block container to&nbsp;the specified number of&nbsp;lines.
+                    It&nbsp;only works in&nbsp;combination with the display property set to -webkit-box or -webkit-inline-box and the -webkit-box-orient property set to&nbsp;vertical.
+                    In&nbsp;most cases you will also want to&nbsp;set overflow to&nbsp;hidden, otherwise the contents won&rsquo;t be&nbsp;clipped but an&nbsp;ellipsis will still be&nbsp;shown after the specified number of&nbsp;lines.
+                    When applied to&nbsp;anchor elements, the truncating can happen in&nbsp;the middle of&nbsp;the text, not necessarily at&nbsp;the end.
                 </p>
                 <script>
-                    webkitLineClamp(document.getElementById('text-element'), 3)
+                    webkitLineClamp(document.getElementById('text-element'), 5)
                 </script>
             </article>
         </section>
@@ -40,18 +49,13 @@
             <h2 class="section__title">Text container</h2>
             <article class="section__container">
                 <p class="section__text" id="text-container">
-                    I put the shotgun in an <strong>Adidas</strong> bag and padded it out with four pairs of tennis socks,
-                    not my style at all, but that was what I was aiming for:
-                    <i>If they think you're crude, go technical; <u>if they think you're technical, go crude</u></i>.
-                    I'm a very technical boy. So I decided to get as crude as possible.
-                    These days, thought, you have to be pretty technical before you can even aspire to crudeness.
-                    I'd had to turn both those twelve-gauge shells from brass stock, on the lathe, and then load then myself;
-                    I'd had to dig up an old microfiche with instructions for hand-loading cartridges;
-                    I'd had to build a lever-action press to seat the primers -all very tricky.
-                    But I knew they'd work.
+                    The <b>-webkit-line-clamp</b> CSS property allows limiting of&nbsp;the contents of&nbsp;a&nbsp;block container to&nbsp;the specified number of&nbsp;lines.
+                    It&nbsp;only works in&nbsp;combination with the <b>display</b> property set to <code>-webkit-box</code> or <code>-webkit-inline-box</code> and the <b>-webkit-box-orient</b> property set to <code>vertical</code>.
+                    In&nbsp;most cases you will also want to&nbsp;set <b>overflow</b> to <code>hidden</code>, otherwise the contents won&rsquo;t be&nbsp;clipped but an&nbsp;ellipsis will still be&nbsp;shown after the specified number of&nbsp;lines.
+                    When applied to&nbsp;anchor elements, the truncating can happen in&nbsp;the middle of&nbsp;the text, not necessarily at&nbsp;the end.
                 </p>
                 <script>
-                    webkitLineClamp(document.getElementById('text-container'), 3)
+                    webkitLineClamp(document.getElementById('text-container'), 5)
                 </script>
             </article>
         </section>
@@ -59,22 +63,13 @@
             <h2 class="section__title">Inline styled text</h2>
             <article class="section__container">
                 <p class="section__text" id="text-inline-style">
-                    I put the shotgun in an <span style="font-weight: bold">Adidas</span>
-                    bag and padded it out with four pairs of tennis socks,
-                    not my style at all, but that was what I was aiming for:
-                    <span style="color: #5af">
-                        If they think you're crude, go technical;
-                        <u>if they think you're technical, go crude</u>
-                    </span>.
-                    I'm a very technical boy. So I decided to get as crude as possible.
-                    These days, thought, you have to be pretty technical before you can even aspire to crudeness.
-                    I'd had to turn both those twelve-gauge shells from brass stock, on the lathe, and then load then myself;
-                    I'd had to dig up an old microfiche with instructions for hand-loading cartridges;
-                    I'd had to build a lever-action press to seat the primers -all very tricky.
-                    But I knew they'd work.
+                    The <b style="font-weight: bold">-webkit-line-clamp</b> CSS property allows limiting of&nbsp;the contents of&nbsp;a&nbsp;block container to&nbsp;the specified number of&nbsp;lines.
+                    It&nbsp;only works in&nbsp;combination with the <b style="color: #5af">display</b> property set to <code style="background: #333; color: #eee;">-webkit-box</code> or <code style="background: #333; color: #eee;">-webkit-inline-box</code> and the <b style="color: #5af">-webkit-box-orient</b> property set to <code style="background: #333; color: #eee;">vertical</code>.
+                    In&nbsp;most cases you will also want to&nbsp;set <b style="color: #5af">overflow</b> to <code style="background: #333; color: #eee;">hidden</code>, otherwise the contents won&rsquo;t be&nbsp;clipped but an&nbsp;ellipsis will still be&nbsp;shown after the specified number of&nbsp;lines.
+                    When applied to&nbsp;anchor elements, the truncating can happen in&nbsp;the middle of&nbsp;the text, not necessarily at&nbsp;the end.
                 </p>
                 <script>
-                    webkitLineClamp(document.getElementById('text-inline-style'), 3)
+                    webkitLineClamp(document.getElementById('text-inline-style'), 5)
                 </script>
             </article>
         </section>
@@ -82,22 +77,13 @@
             <h2 class="section__title">Various text line-height</h2>
             <article class="section__container">
                 <p class="section__text" id="text-line-height">
-                    I put the shotgun in an <span style="line-height: 36px">Adidas</span>
-                    <span>bag and padded it out with four pairs of tennis socks,</span>
-                    not my style at all, but that was what I was aiming for:
-                    <span style="line-height: 48px">
-                        If they think you're crude, go technical;
-                        if they think you're technical, go crude.
-                    </span>
-                    I'm a very technical boy. So I decided to get as crude as possible.
-                    <span>These days, thought, you have to be pretty technical before you can even aspire to crudeness.</span>
-                    I'd had to turn both those twelve-gauge shells from brass stock, on the lathe, and then load then myself;
-                    I'd had to dig up an old microfiche with instructions for hand-loading cartridges;
-                    I'd had to build a lever-action press to seat the primers -all very tricky.
-                    But I knew they'd work.
+                    The <b style="line-height: 36px">-webkit-line-clamp</b> CSS property allows limiting of&nbsp;the contents of&nbsp;a&nbsp;block container to&nbsp;the specified number of&nbsp;lines.
+                    It&nbsp;only works in&nbsp;combination with the <b style="line-height: 36px">display</b> property set to <code>-webkit-box</code> or <code>-webkit-inline-box</code> and the <b style="line-height: 36px">-webkit-box-orient</b> property set to <code>vertical</code>.
+                    In&nbsp;most cases you will also want to&nbsp;set <b style="line-height: 36px">overflow</b> to <code>hidden</code>, otherwise the contents won&rsquo;t be&nbsp;clipped but an&nbsp;ellipsis will still be&nbsp;shown after the specified number of&nbsp;lines.
+                    When applied to&nbsp;anchor elements, the truncating can happen in&nbsp;the middle of&nbsp;the text, not necessarily at&nbsp;the end.
                 </p>
                 <script>
-                    webkitLineClamp(document.getElementById('text-line-height'), 3)
+                    webkitLineClamp(document.getElementById('text-line-height'), 5)
                 </script>
             </article>
         </section>

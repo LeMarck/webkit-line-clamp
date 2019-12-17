@@ -1,7 +1,7 @@
 # webkit-line-clamp
 [![Build Status](https://travis-ci.org/LeMarck/webkit-line-clamp.svg?branch=master)](https://travis-ci.org/LeMarck/webkit-line-clamp)
-[![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
-[![npm Version](http://img.shields.io/npm/v/webkit-line-clamp.svg?style=flat)](https://www.npmjs.com/package/webkit-line-clamp)
+[![MIT License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
+[![NPM Version](http://img.shields.io/npm/v/webkit-line-clamp.svg?style=flat)](https://www.npmjs.com/package/webkit-line-clamp)
 
 JS polyfill CSS property [**-webkit-line-clamp**](https://developer.mozilla.org/en-US/docs/Web/CSS/-webkit-line-clamp).
 Works with nested DOM nodes.
@@ -13,7 +13,7 @@ Works with nested DOM nodes.
 
 ## Installation
 
-```sh
+```shell script
 $ yarn add webkit-line-clamp
 # or
 $ npm install webkit-line-clamp
@@ -31,4 +31,4 @@ webkitLineClamp(document.getElementById('text'), 3);
 
 ## License
 
-[**MIT**](LICENSE)
+[**MIT License**](LICENSE)
