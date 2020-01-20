@@ -2,11 +2,11 @@
 
 /**
  * @param {HTMLElement} element
- * @param {string} style
+ * @param {string} property
  * @return {string}
  */
-function getStyleValue(element, style) {
-    return window.getComputedStyle(element, null).getPropertyValue(style);
+function getStyleValue(element, property) {
+    return window.getComputedStyle(element, null).getPropertyValue(property);
 }
 
 /**
@@ -25,15 +25,14 @@ function getLineHeight(element) {
 
 /**
  * @param {HTMLElement} element
- * @param {number} lineHeight
  */
-function setupLineHeight(element, lineHeight) {
+function setupLineHeight(element) {
     for (var index = 0; index < element.childNodes.length; index++) {
         var childNode = element.childNodes[index];
 
         if (childNode.nodeType === 1) {
             childNode.inlineCssText = childNode.style.cssText;
-            childNode.style.lineHeight = lineHeight + 'px';
+            childNode.style.lineHeight = '100%';
         }
     }
 }
@@ -46,8 +45,11 @@ function removeLineHeight(element) {
         var childNode = element.childNodes[index];
 
         if (childNode.nodeType === 1) {
-            childNode.removeAttributeNode(childNode.attributes.getNamedItem('style'));
-            childNode.style.cssText = childNode.inlineCssText;
+            childNode.removeAttribute('style');
+
+            if (childNode.inlineCssText) {
+                childNode.style.cssText = childNode.inlineCssText;
+            }
         }
     }
 }
@@ -80,7 +82,7 @@ function truncateTextNode(textNode, rootElement, maxHeight) {
 
     var length = textContent.length;
 
-    while (length > 1) {
+    while (length > 2) {
         textContent = textContent.substring(0, --length);
 
         textNode.textContent = textContent + '…';
@@ -124,7 +126,7 @@ function truncate(rootElement, lineCount) {
 
     if (rootElement.clientHeight <= maxHeight) return;
 
-    setupLineHeight(rootElement, lineHeight);
+    setupLineHeight(rootElement);
     truncateElementNode(rootElement, rootElement, maxHeight, lineHeight);
     removeLineHeight(rootElement);
 }
