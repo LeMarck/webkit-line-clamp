@@ -29,63 +29,80 @@
         <p class="header__description">
             JS polyfill CSS property <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/-webkit-line-clamp" class="header__link">-webkit-line-clamp</a>
         </p>
+        <figure class="header__bash">
+            <code>
+                npm install
+                <span class="header__npm-package">webkit-line-clamp</span><br>
+                <span class="header__bash-comment">// or</span><br>
+                yarn add
+                <span class="header__npm-package">webkit-line-clamp</span>
+            </code>
+        </figure>
     </header>
     <main class="main">
         <section class="section">
             <h2 class="section__title">Text element</h2>
             <article class="section__container">
-                <p class="section__text" id="text-element">
-                    The -webkit-line-clamp CSS property allows limiting of&nbsp;the contents of&nbsp;a&nbsp;block container to&nbsp;the specified number of&nbsp;lines.
-                    It&nbsp;only works in&nbsp;combination with the display property set to -webkit-box or -webkit-inline-box and the -webkit-box-orient property set to&nbsp;vertical.
-                    In&nbsp;most cases you will also want to&nbsp;set overflow to&nbsp;hidden, otherwise the contents won&rsquo;t be&nbsp;clipped but an&nbsp;ellipsis will still be&nbsp;shown after the specified number of&nbsp;lines.
-                    When applied to&nbsp;anchor elements, the truncating can happen in&nbsp;the middle of&nbsp;the text, not necessarily at&nbsp;the end.
+                <p id="text-element">
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                    Adipisci earum odio qui voluptate voluptatem.
+                    Accusantium, blanditiis dolorum?
+                    Animi aut distinctio doloremque eveniet iusto laborum minus nisi optio, quia quisquam!
+                    Neque.
                 </p>
-                <script>
-                    webkitLineClamp(document.getElementById('text-element'), 5)
-                </script>
             </article>
+            <script>
+                webkitLineClamp(document.getElementById('text-element'), 3)
+            </script>
         </section>
         <section class="section">
             <h2 class="section__title">Text container</h2>
             <article class="section__container">
-                <p class="section__text" id="text-container">
-                    The <b>-webkit-line-clamp</b> CSS property allows limiting of&nbsp;the contents of&nbsp;a&nbsp;block container to&nbsp;the specified number of&nbsp;lines.
-                    It&nbsp;only works in&nbsp;combination with the <b>display</b> property set to <code>-webkit-box</code> or <code>-webkit-inline-box</code> and the <b>-webkit-box-orient</b> property set to <code>vertical</code>.
-                    In&nbsp;most cases you will also want to&nbsp;set <b>overflow</b> to <code>hidden</code>, otherwise the contents won&rsquo;t be&nbsp;clipped but an&nbsp;ellipsis will still be&nbsp;shown after the specified number of&nbsp;lines.
-                    When applied to&nbsp;anchor elements, the truncating can happen in&nbsp;the middle of&nbsp;the text, not necessarily at&nbsp;the end.
+                <p id="text-container">
+                    <b>Lorem ipsum</b> dolor sit amet, consectetur adipisicing elit.
+                    <code>Adipisci earum odio qui voluptate voluptatem.</code>
+                    <i>Accusantium, blanditiis dolorum?</i>
+                    <u>Animi aut distinctio doloremque eveniet iusto laborum minus nisi optio, quia quisquam!</u>
+                    <s>Neque</s>.
                 </p>
-                <script>
-                    webkitLineClamp(document.getElementById('text-container'), 5)
-                </script>
             </article>
+            <script>
+                webkitLineClamp(document.getElementById('text-container'), 3)
+            </script>
         </section>
         <section class="section">
             <h2 class="section__title">Inline styled text</h2>
             <article class="section__container">
-                <p class="section__text" id="text-inline-style">
-                    The <b style="font-weight: bold">-webkit-line-clamp</b> CSS property allows limiting of&nbsp;the contents of&nbsp;a&nbsp;block container to&nbsp;the specified number of&nbsp;lines.
-                    It&nbsp;only works in&nbsp;combination with the <b style="color: #5af">display</b> property set to <code style="background: #333; color: #eee;">-webkit-box</code> or <code style="background: #333; color: #eee;">-webkit-inline-box</code> and the <b style="color: #5af">-webkit-box-orient</b> property set to <code style="background: #333; color: #eee;">vertical</code>.
-                    In&nbsp;most cases you will also want to&nbsp;set <b style="color: #5af">overflow</b> to <code style="background: #333; color: #eee;">hidden</code>, otherwise the contents won&rsquo;t be&nbsp;clipped but an&nbsp;ellipsis will still be&nbsp;shown after the specified number of&nbsp;lines.
-                    When applied to&nbsp;anchor elements, the truncating can happen in&nbsp;the middle of&nbsp;the text, not necessarily at&nbsp;the end.
+                <p id="text-inline-style">
+                    <span style="font-weight: bold">Lorem ipsum</span> dolor sit amet, consectetur adipisicing elit.
+                    <code style="color: #a00">Adipisci earum odio qui voluptate voluptatem.</code>
+                    <span style="font-style: italic">Accusantium, blanditiis dolorum?</span>
+                    <span style="text-decoration: underline">
+                        Animi aut distinctio doloremque eveniet iusto laborum minus nisi optio, quia quisquam!
+                    </span>
+                    <span style="text-decoration: line-through">Neque</span>.
                 </p>
-                <script>
-                    webkitLineClamp(document.getElementById('text-inline-style'), 5)
-                </script>
             </article>
+            <script>
+                webkitLineClamp(document.getElementById('text-inline-style'), 3)
+            </script>
         </section>
         <section class="section">
             <h2 class="section__title">Various text line-height</h2>
             <article class="section__container">
-                <p class="section__text" id="text-line-height">
-                    The <b style="line-height: 36px">-webkit-line-clamp</b> CSS property allows limiting of&nbsp;the contents of&nbsp;a&nbsp;block container to&nbsp;the specified number of&nbsp;lines.
-                    It&nbsp;only works in&nbsp;combination with the <b style="line-height: 36px">display</b> property set to <code>-webkit-box</code> or <code>-webkit-inline-box</code> and the <b style="line-height: 36px">-webkit-box-orient</b> property set to <code>vertical</code>.
-                    In&nbsp;most cases you will also want to&nbsp;set <b style="line-height: 36px">overflow</b> to <code>hidden</code>, otherwise the contents won&rsquo;t be&nbsp;clipped but an&nbsp;ellipsis will still be&nbsp;shown after the specified number of&nbsp;lines.
-                    When applied to&nbsp;anchor elements, the truncating can happen in&nbsp;the middle of&nbsp;the text, not necessarily at&nbsp;the end.
+                <p id="text-line-height">
+                    <b style="line-height: 36px">Lorem ipsum</b> dolor sit amet, consectetur adipisicing elit.
+                    <code style="line-height: 36px">Adipisci earum odio qui voluptate voluptatem.</code>
+                    <i style="line-height: 36px">Accusantium, blanditiis dolorum?</i>
+                    <u style="line-height: 36px">
+                        Animi aut distinctio doloremque eveniet iusto laborum minus nisi optio, quia quisquam!
+                    </u>
+                    <s style="line-height: 36px">Neque</s>.
                 </p>
-                <script>
-                    webkitLineClamp(document.getElementById('text-line-height'), 5)
-                </script>
             </article>
+            <script>
+                webkitLineClamp(document.getElementById('text-line-height'), 3)
+            </script>
         </section>
     </main>
 </body>

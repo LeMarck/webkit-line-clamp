@@ -1,3 +1,7 @@
+## 1.2.2
+
+Fixed a bug with setting the line-height property for child nodes
+
 ## 1.2.1
 
 Two import options are now available

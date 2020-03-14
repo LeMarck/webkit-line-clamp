@@ -7,6 +7,11 @@ body {
     background: #fff;
 }
 
+.header {
+    max-width: 605px;
+    margin: 0 auto;
+}
+
 .header__title {
     font-size: 3rem;
     margin-bottom: 0;
@@ -21,6 +26,24 @@ body {
     font-weight: bold;
     color: #000;
     text-decoration: none;
+}
+
+.header__bash {
+    background: #282a36;
+    color: #f8f8f2;
+    border-radius: 4px;
+    margin: 32px auto 0;
+    padding: 16px;
+    max-width: 300px;
+}
+
+.header__bash-comment {
+    color: #6272a4;
+    user-select: none;
+}
+
+.header__npm-package {
+    color: #ff5555;
 }
 
 .main {
