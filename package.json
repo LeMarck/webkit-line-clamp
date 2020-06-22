@@ -27,6 +27,6 @@
     "polyfill"
   ],
   "devDependencies": {
-    "eslint": "^7.0.0-alpha.3"
+    "eslint": "^7.0.3"
   }
 }
