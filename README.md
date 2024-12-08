@@ -1,5 +1,5 @@
 # webkit-line-clamp
-[![Build Status](https://travis-ci.org/LeMarck/webkit-line-clamp.svg?branch=master)](https://travis-ci.org/LeMarck/webkit-line-clamp)
+![GitHub Action Status](https://github.com/LeMarck/webkit-line-clamp/actions/workflows/lint.yml/badge.svg)
 [![MIT License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
 [![NPM Version](http://img.shields.io/npm/v/webkit-line-clamp.svg?style=flat)](https://www.npmjs.com/package/webkit-line-clamp)
 

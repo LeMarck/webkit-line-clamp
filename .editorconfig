@@ -8,7 +8,10 @@ indent_size = 4
 indent_style = space
 trim_trailing_whitespace = true
 
-[*.{json, babelrc, yml}]
+[*.json]
+indent_size = 2
+
+[*.yaml]
 indent_size = 2
 
 [*.md]
